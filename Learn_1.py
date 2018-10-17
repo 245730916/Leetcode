@@ -1,13 +1,3 @@
-#给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
-*****
-**示例:   
-给定 nums = [2, 7, 11, 15], target = 9   
-因为 nums[0] + nums[1] = 2 + 7 = 9  
-所以返回 [0, 1]**
-*****
-##解答：
-
-```
 class Solution:
     def twoSum(self, nums, target):
         for x in nums: 
@@ -22,7 +12,36 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-```
-*****
-##运行结果       
-[结果](https://leetcode-cn.com/problems/two-sum/submissions/)
+
+def stringToIntegerList(input):
+    return json.loads(input)
+
+def integerListToString(nums, len_of_list=None):
+    if not len_of_list:
+        len_of_list = len(nums)
+    return json.dumps(nums[:len_of_list])
+
+def main():
+    import sys
+    import io
+    def readlines():
+        for line in io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8'):
+            yield line.strip('\n')
+
+    lines = readlines()
+    while True:
+        try:
+            line = next(lines)
+            nums = stringToIntegerList(line);
+            line = next(lines)
+            target = int(line);
+            
+            ret = Solution().twoSum(nums, target)
+
+            out = integerListToString(ret);
+            print(out)
+        except StopIteration:
+            break
+
+if __name__ == '__main__':
+    main()
