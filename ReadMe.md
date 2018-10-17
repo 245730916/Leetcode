@@ -1,28 +1,11 @@
-#给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
-*****
-**示例:   
-给定 nums = [2, 7, 11, 15], target = 9   
-因为 nums[0] + nums[1] = 2 + 7 = 9  
-所以返回 [0, 1]**
-*****
-##解答：
+#运行结果     
+![avatar](C:\Users\JU Tianxiao\Documents\GitHub\Leetcode)
 
-```
-class Solution:
-    def twoSum(self, nums, target):
-        for x in nums: 
-            n=nums.index(x)
-            nums.remove(x)
-            if (target-x) in nums: 
-                return [n, nums.index(target-x)+1] 
-            else:
-                nums.insert(n,x)
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-```
-*****
-##运行结果       
-[结果](https://leetcode-cn.com/problems/two-sum/submissions/)
+#基本思路    
+取list中一个元素，记录其位置和数值     
+删除这个元素       
+计算目标数和被选元素的差值并与列表比对     
+如果存在输出元素和差值的位置
+如果不存在将被删除元素重新插入，复原列表  
+
+
