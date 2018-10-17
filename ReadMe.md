@@ -1,5 +1,5 @@
 #运行结果     
-![avatar](C:\Users\JU Tianxiao\Documents\GitHub\Leetcode)
+![image](https://github.com/245730916/Leetcode/blob/master/result.png)
 
 #基本思路    
 取list中一个元素，记录其位置和数值     
